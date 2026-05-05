@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#c9a84c">
+  <meta name="description" content="Witness — Personal Chef & Catering. Southern American, Vegan, Pescatarian, Asian, Nigerian fusion cuisine. Serving Portugal with bespoke culinary experiences, private dining, events, and delivery.">
+  <meta name="keywords" content="personal chef, catering, Lisbon, Porto, Portugal, Southern food, Nigerian food, vegan chef, pescatarian, private dining, pop-up supper">
+  <meta property="og:title" content="Witness — Personal Chef & Catering">
+  <meta property="og:description" content="Bespoke culinary experiences rooted in Southern American, Vegan, Asian, and Nigerian traditions.">
+  <meta property="og:type" content="website">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <title>Witness — Personal Chef & Catering</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- SPLASH SCREEN -->
+<div class="splash-screen" id="splashScreen">
+  <div class="splash-bg"></div>
+  <div class="splash-inner">
+    <img src="images/splash-screen.png" alt="Witness Culinary — Elevated Soul. Global Flavor." class="splash-img">
+    <button class="splash-cta" id="splashCta" onclick="dismissSplash()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      Enter
+    </button>
+  </div>
+</div>
+
+<!-- BACKDROP -->
+<div class="backdrop" id="backdrop"></div>
+
+<!-- TOAST CONTAINER -->
+<div class="toast-container" id="toastContainer"></div>
+
+<!-- INSTALL BANNER -->
+<div class="install-banner" id="installBanner">
+  <img src="images/logo-icon.png" alt="Witness" style="width:36px;height:36px;object-fit:contain;border-radius:6px;flex-shrink:0;">
+  <p>Add <strong>Witness Culinary</strong> to your home screen for the full experience.</p>
+  <button class="btn btn-outline btn-sm" id="installBtn">Install</button>
+  <button class="btn btn-ghost btn-sm" id="dismissInstall">Dismiss</button>
+</div>
+
+<!-- NAVIGATION -->
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo nav-logo-img">
+      <img src="images/logo-icon.png" alt="Witness Culinary" class="nav-logo-icon">
+      <div>
+        WITNESS
+        <span>Culinary</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#occasions">Occasions</a></li>
+      <li><a href="#calendar">Events</a></li>
+      <li><a href="#delivery">Delivery</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="#booking" class="btn btn-primary btn-sm">Book Now</a>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about">About</a>
+  <a href="#menu">Menu</a>
+  <a href="#occasions">Occasions</a>
+  <a href="#calendar">Events</a>
+  <a href="#delivery">Delivery</a>
+  <a href="#testimonials">Reviews</a>
+  <a href="#contact">Contact</a>
+  <a href="#booking" class="btn btn-primary" style="font-family:var(--font-ui);font-size:0.78rem;margin-top:1rem;">Book Now</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="deco-ring deco-ring-1"></div>
+  <div class="deco-ring deco-ring-2"></div>
+  <div class="deco-dot" style="right:35%;top:30%;animation-delay:0.5s;"></div>
+  <div class="deco-dot" style="right:28%;top:60%;animation-delay:1.2s;width:6px;height:6px;"></div>
+  <div class="deco-dot" style="right:55%;top:75%;animation-delay:0.8s;width:3px;height:3px;"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <img src="images/logo-icon.png" alt="Witness Culinary" class="hero-logo-icon">
+        <span class="label">Portugal's Premier Personal Chef</span>
+      </div>
+      <h1 class="hero-title">
+        Cuisine That<br>
+        <span class="accent">Remembers</span><br>
+        Where It Came From
+      </h1>
+      <p class="hero-subtitle">
+        Southern American soul, West African tradition, Asian precision, plant-forward mastery — brought to your table, your way.
+      </p>
+      <div class="hero-cuisines">
+        <span class="badge badge-gold">Southern American</span>
+        <span class="badge badge-green">Vegan</span>
+        <span class="badge badge-sage">Pescatarian</span>
+        <span class="badge badge-gold">Asian</span>
+        <span class="badge badge-green">Nigerian</span>
+      </div>
+      <div class="hero-actions">
+        <a href="#menu" class="btn btn-primary btn-lg">Explore the Menu</a>
+        <a href="#booking" class="btn btn-outline btn-lg">Book a Chef</a>
+      </div>
+      <div class="hero-stat-row">
+        <div>
+          <div class="hero-stat-num">500+</div>
+          <div class="hero-stat-label">Events Catered</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">18</div>
+          <div class="hero-stat-label">Signature Dishes</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">5</div>
+          <div class="hero-stat-label">Culinary Traditions</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">PT</div>
+          <div class="hero-stat-label">Based in Portugal</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-frame fade-in">
+        <div class="about-img-placeholder">
+          <img src="images/logo-icon.png" alt="Witness Culinary" style="width:55%;height:55%;object-fit:contain;opacity:0.35;">
+        </div>
+        <div class="about-corner">
+          10+ Years
+          <span>of Culinary Mastery</span>
+        </div>
+      </div>
+      <div class="about-content fade-in fade-in-delay-1">
+        <div class="section-header">
+          <span class="label">The Chef Behind the Table</span>
+          <h2>A Story Told Through Food</h2>
+          <p>Witness is a personal chef and caterer rooted in the belief that food is living cultural memory. Every dish carries the weight of tradition — the smoke of Southern kitchens, the spice of Lagos markets, the precision of Japanese technique, and the quiet power of plant-forward cooking.</p>
+        </div>
+        <p style="margin-top:1.5rem;">Operating from Portugal, Witness creates bespoke culinary experiences for private dinners, weddings, corporate events, pop-up supper clubs, and cultural celebrations. Each menu is built from scratch for your occasion, your guests, your story.</p>
+        <div class="divider"></div>
+        <div class="cuisine-tags">
+          <span class="badge badge-gold">Southern American</span>
+          <span class="badge badge-green">West African</span>
+          <span class="badge badge-sage">East Asian</span>
+          <span class="badge badge-gold">Vegan & Plant-Forward</span>
+          <span class="badge badge-green">Pescatarian</span>
+          <span class="badge badge-sage">Nigerian Cuisine</span>
+        </div>
+        <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
+          <a href="#booking" class="btn btn-primary">Book a Consultation</a>
+          <a href="#menu" class="btn btn-outline">View the Menu</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section class="section" id="menu" style="background:var(--ink-2);">
+  <div class="container">
+    <div class="section-header center fade-in">
+      <span class="label">The Menu</span>
+      <h2>Signature Dishes</h2>
+      <p>Each dish is designed for private chef service, catering, and pop-up events. Pricing is per person for minimum party sizes. Reach out to discuss full menu packages.</p>
+    </div>
+    <div class="menu-filters fade-in">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="southern">Southern</button>
+      <button class="filter-btn" data-filter="vegan">Vegan</button>
+      <button class="filter-btn" data-filter="pescatarian">Pescatarian</button>
+      <button class="filter-btn" data-filter="asian">Asian</button>
+      <button class="filter-btn" data-filter="nigerian">Nigerian</button>
+    </div>
+    <div class="menu-grid" id="menuGrid"></div>
+    <div style="text-align:center;margin-top:3rem;" class="fade-in">
+      <p style="font-family:var(--font-ui);font-size:0.82rem;color:var(--text-muted);margin-bottom:1.5rem;">All menus are fully customizable. Dietary restrictions, cultural requirements, and guest preferences are honored with care.</p>
+      <a href="#booking" class="btn btn-outline">Request a Custom Menu</a>
+    </div>
+  </div>
+</section>
+
+<!-- OCCASIONS -->
+<section class="section" id="occasions">
+  <div class="container">
+    <div class="section-header center fade-in">
+      <span class="label">Themed Experiences</span>
+      <h2>Every Occasion, Elevated</h2>
+      <p>From intimate dinners to grand celebrations, each experience is curated with intention — menu, presentation, and atmosphere aligned to your vision.</p>
+    </div>
+    <div class="occasions-grid" id="occasionsGrid"></div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section class="section booking-section" id="booking">
+  <div class="container">
+    <div class="booking-grid">
+      <div class="booking-info fade-in">
+        <span class="label">Reserve Your Experience</span>
+        <h2>Book Your Personal Chef</h2>
+        <p>Whether it's a dinner for two or a celebration for two hundred, every booking begins with a conversation. Submit your details and Witness will respond within 24 hours.</p>
+        <ul class="booking-features">
+          <li>
+            <div class="feature-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <div class="feature-text">
+              <div class="feature-text-title">Flexible Scheduling</div>
+              <div class="feature-text-desc">Choose from available dates on the calendar above or request a custom time slot.</div>
+            </div>
+          </li>
+          <li>
+            <div class="feature-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="feature-text">
+              <div class="feature-text-title">On-Site or Delivery</div>
+              <div class="feature-text-desc">Full private chef service at your location, or prepared meals for pickup and delivery across Portugal.</div>
+            </div>
+          </li>
+          <li>
+            <div class="feature-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            </div>
+            <div class="feature-text">
+              <div class="feature-text-title">Bespoke Menu Design</div>
+              <div class="feature-text-desc">Every menu is created specifically for your event, preferences, and dietary requirements.</div>
+            </div>
+          </li>
+          <li>
+            <div class="feature-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="feature-text">
+              <div class="feature-text-title">24-Hour Response</div>
+              <div class="feature-text-desc">All inquiries receive a personal response within one business day.</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="fade-in fade-in-delay-1">
+        <div class="booking-form-card">
+          <div style="display:flex;align-items:center;gap:0.8rem;margin-bottom:2rem;">
+            <img src="images/logo-icon.png" alt="Witness" style="width:36px;height:36px;object-fit:contain;border-radius:7px;flex-shrink:0;">
+            <h3 style="font-size:1.3rem;color:var(--text-primary);margin:0;">Request a Booking</h3>
+          </div>
+          <form id="bookingForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">First Name</label>
+                <input type="text" name="firstName" class="form-control" placeholder="Your first name" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Last Name</label>
+                <input type="text" name="lastName" class="form-control" placeholder="Your last name" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email Address</label>
+              <input type="email" name="email" class="form-control" placeholder="your@email.com" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Phone / WhatsApp</label>
+              <input type="tel" name="phone" class="form-control" placeholder="+351 000 000 000">
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Preferred Date</label>
+                <input type="date" name="date" id="bookingDate" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Number of Guests</label>
+                <input type="number" name="guests" class="form-control" placeholder="e.g. 12" min="2" max="500" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Occasion Type</label>
+              <select name="occasion" id="bookingOccasion" class="form-control" required>
+                <option value="" disabled selected>Select occasion</option>
+                <option>Intimate Dinner Party</option>
+                <option>Wedding Reception</option>
+                <option>Birthday Celebration</option>
+                <option>Corporate & Executive</option>
+                <option>Holiday Gathering</option>
+                <option>Pop-Up Supper Club</option>
+                <option>Kwanzaa / Cultural Celebration</option>
+                <option>Meal Prep Service</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Service Type</label>
+              <select name="serviceType" class="form-control" required>
+                <option value="" disabled selected>Select service</option>
+                <option>Private On-Site Chef</option>
+                <option>Full Catering with Staff</option>
+                <option>Prepared Meal Delivery</option>
+                <option>Pop-Up Event Catering</option>
+                <option>Pickup Service</option>
+                <option>Weekly Meal Prep</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Cuisine Preferences</label>
+              <div style="display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:0.4rem;" id="cuisinePrefs">
+                <label style="display:flex;align-items:center;gap:0.4rem;font-family:var(--font-ui);font-size:0.78rem;color:var(--text-secondary);cursor:pointer;">
+                  <input type="checkbox" name="cuisine" value="Southern" style="accent-color:var(--gold);"> Southern American
+                </label>
+                <label style="display:flex;align-items:center;gap:0.4rem;font-family:var(--font-ui);font-size:0.78rem;color:var(--text-secondary);cursor:pointer;">
+                  <input type="checkbox" name="cuisine" value="Vegan" style="accent-color:var(--gold);"> Vegan
+                </label>
+                <label style="display:flex;align-items:center;gap:0.4rem;font-family:var(--font-ui);font-size:0.78rem;color:var(--text-secondary);cursor:pointer;">
+                  <input type="checkbox" name="cuisine" value="Pescatarian" style="accent-color:var(--gold);"> Pescatarian
+                </label>
+                <label style="display:flex;align-items:center;gap:0.4rem;font-family:var(--font-ui);font-size:0.78rem;color:var(--text-secondary);cursor:pointer;">
+                  <input type="checkbox" name="cuisine" value="Asian" style="accent-color:var(--gold);"> Asian
+                </label>
+                <label style="display:flex;align-items:center;gap:0.4rem;font-family:var(--font-ui);font-size:0.78rem;color:var(--text-secondary);cursor:pointer;">
+                  <input type="checkbox" name="cuisine" value="Nigerian" style="accent-color:var(--gold);"> Nigerian
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Dietary Requirements & Notes</label>
+              <textarea name="notes" class="form-control" placeholder="Allergies, dietary restrictions, event details, vision for the experience..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:1rem;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Submit Booking Request
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALENDAR & EVENTS -->
+<section class="section calendar-section" id="calendar">
+  <div class="container">
+    <div class="section-header center fade-in">
+      <span class="label">Schedule & Availability</span>
+      <h2>Calendar of Events</h2>
+      <p>View upcoming pop-ups, pickup dates, delivery windows, and availability. Select a date to pre-fill your booking form.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;" class="fade-in">
+      <div class="calendar-wrapper">
+        <div class="calendar-header">
+          <div class="calendar-nav">
+            <button class="cal-nav-btn" onclick="Calendar.prev()">&#8249;</button>
+            <button class="cal-nav-btn" onclick="Calendar.next()">&#8250;</button>
+          </div>
+          <div class="calendar-month" id="calendarMonth"></div>
+          <div style="display:flex;gap:0.6rem;">
+            <span class="badge badge-gold" style="font-size:0.58rem;">Pop-up</span>
+            <span class="badge badge-green" style="font-size:0.58rem;">Delivery</span>
+          </div>
+        </div>
+        <div class="calendar-grid" id="calendarGrid"></div>
+        <div style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--border);">
+          <p style="font-family:var(--font-ui);font-size:0.72rem;color:var(--text-muted);line-height:1.6;">
+            Dots above dates indicate scheduled events or delivery windows. Click any date to select it for your booking. For private bookings, contact directly to confirm availability.
+          </p>
+        </div>
+      </div>
+      <div>
+        <div class="events-list">
+          <h4 style="font-size:1rem;color:var(--text-primary);margin-bottom:1.5rem;font-family:var(--font-display);letter-spacing:0.08em;">Upcoming Events</h4>
+          <div class="event-item event-popup">
+            <div class="event-dot"></div>
+            <div>
+              <div class="event-name">Summer Supper Club — Ocean-to-Table</div>
+              <div class="event-time">Jun 14 · 19:30 · Cascais, Portugal</div>
+            </div>
+            <span class="badge badge-gold event-type-label">Pop-up</span>
+          </div>
+          <div class="event-item event-private">
+            <div class="event-dot"></div>
+            <div>
+              <div class="event-name">Nigerian Heritage Dinner Series</div>
+              <div class="event-time">Jun 22 · 20:00 · Lisbon Private Venue</div>
+            </div>
+            <span class="badge event-type-label" style="background:rgba(155,109,255,0.15);color:#9b6dff;border:1px solid rgba(155,109,255,0.3);">Private</span>
+          </div>
+          <div class="event-item event-delivery">
+            <div class="event-dot"></div>
+            <div>
+              <div class="event-name">Vegan Feast Market Pickup</div>
+              <div class="event-time">Jul 5 · 12:00 · Mercado Campo de Ourique</div>
+            </div>
+            <span class="badge badge-green event-type-label">Pickup</span>
+          </div>
+          <div class="event-item event-popup">
+            <div class="event-dot"></div>
+            <div>
+              <div class="event-name">Korean-Southern Fusion Experience</div>
+              <div class="event-time">Jul 19 · 19:00 · Porto Studio Kitchen</div>
+            </div>
+            <span class="badge badge-gold event-type-label">Pop-up</span>
+          </div>
+        </div>
+        <div style="margin-top:2rem;padding:1.5rem;background:rgba(201,168,76,0.05);border:1px solid var(--border-strong);border-radius:var(--radius-lg);">
+          <h4 style="font-family:var(--font-ui);font-size:0.78rem;font-weight:600;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.8rem;">Schedule a Private Event</h4>
+          <p style="font-family:var(--font-ui);font-size:0.8rem;color:var(--text-muted);line-height:1.6;margin-bottom:1rem;">Private bookings for 4 to 300+ guests. Full-service catering, chef presence, and menu consultation included.</p>
+          <a href="#booking" class="btn btn-primary btn-sm">Schedule Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POPUP EVENTS -->
+<section class="section popups-section" id="popups">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="label">Upcoming Pop-Ups & Pickups</span>
+      <h2>Events Open to the Public</h2>
+      <p>Join a ticketed supper club, reserve a pickup slot, or book delivery. Limited seats available — reserve early.</p>
+    </div>
+    <div class="popup-list" id="popupList"></div>
+    <div style="text-align:center;margin-top:2.5rem;" class="fade-in">
+      <p style="font-family:var(--font-ui);font-size:0.8rem;color:var(--text-muted);margin-bottom:1rem;">
+        To receive early access to events and pop-up announcements, join the mailing list.
+      </p>
+      <div style="display:flex;gap:0.8rem;justify-content:center;flex-wrap:wrap;">
+        <input type="email" id="mailingEmail" class="form-control" style="max-width:300px;" placeholder="your@email.com">
+        <button class="btn btn-primary" onclick="joinMailingList()">Join the List</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DELIVERY -->
+<section class="section delivery-section" id="delivery">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="label">Order & Delivery</span>
+      <h2>Get It Delivered to You</h2>
+      <p>Order Witness meals through your preferred delivery platform across Portugal, or arrange direct pickup. All platforms updated with current menu availability.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;" class="fade-in">
+      <div>
+        <div class="delivery-grid" id="deliveryGrid"></div>
+      </div>
+      <div>
+        <h3 style="font-size:1.2rem;margin-bottom:1rem;color:var(--text-primary);">Direct Order & Pickup</h3>
+        <p style="margin-bottom:2rem;">Prefer to order directly? Place your order here and choose from pickup locations in Lisbon and Porto, or arrange delivery through our logistics partners.</p>
+        <div id="cartItemsPreview" style="margin-bottom:2rem;"></div>
+        <div style="display:flex;flex-direction:column;gap:1rem;">
+          <div style="display:flex;gap:1rem;">
+            <button class="btn btn-primary" style="flex:1;justify-content:center;" onclick="Cart.render();document.getElementById('cartBtn').click()">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+              View Order Cart
+            </button>
+            <a href="#menu" class="btn btn-outline" style="flex:1;justify-content:center;">Browse Menu</a>
+          </div>
+          <div style="padding:1.5rem;background:var(--ink-2);border:1px solid var(--border);border-radius:var(--radius-lg);">
+            <div style="font-family:var(--font-ui);font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-muted);margin-bottom:1rem;">Pickup Locations</div>
+            <div style="display:flex;flex-direction:column;gap:0.8rem;">
+              <div style="display:flex;gap:0.8rem;align-items:flex-start;">
+                <svg style="color:var(--gold);flex-shrink:0;margin-top:2px;" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="3"/><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+                <div>
+                  <div style="font-family:var(--font-ui);font-size:0.83rem;color:var(--text-primary);font-weight:500;">Lisbon — Mercado de Campo de Ourique</div>
+                  <div style="font-family:var(--font-ui);font-size:0.72rem;color:var(--text-muted);">Saturdays 10:00 – 14:00</div>
+                </div>
+              </div>
+              <div style="display:flex;gap:0.8rem;align-items:flex-start;">
+                <svg style="color:var(--gold);flex-shrink:0;margin-top:2px;" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="3"/><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+                <div>
+                  <div style="font-family:var(--font-ui);font-size:0.83rem;color:var(--text-primary);font-weight:500;">Porto — Mercado do Bolhao</div>
+                  <div style="font-family:var(--font-ui);font-size:0.72rem;color:var(--text-muted);">Sundays 11:00 – 15:00</div>
+                </div>
+              </div>
+              <div style="display:flex;gap:0.8rem;align-items:flex-start;">
+                <svg style="color:var(--gold);flex-shrink:0;margin-top:2px;" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="3"/><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+                <div>
+                  <div style="font-family:var(--font-ui);font-size:0.83rem;color:var(--text-primary);font-weight:500;">Cascais & Sintra — By Arrangement</div>
+                  <div style="font-family:var(--font-ui);font-size:0.72rem;color:var(--text-muted);">Contact for schedule</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section gallery-section" id="gallery">
+  <div class="container">
+    <div class="section-header center fade-in">
+      <span class="label">The Work</span>
+      <h2>From the Kitchen</h2>
+      <p>A visual record of events, dishes, and experiences. Share your own photos after dining with Witness.</p>
+    </div>
+    <div class="gallery-grid fade-in">
+      <div class="gallery-item span-2 span-row" style="background:linear-gradient(135deg,var(--ink-3),var(--forest));">
+        W
+        <div class="gallery-overlay"><span class="gallery-overlay-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+        </span></div>
+      </div>
+      <div class="gallery-item" style="background:linear-gradient(160deg,#1a2e1a,#0f1f0f);">N</div>
+      <div class="gallery-item" style="background:linear-gradient(160deg,#1e1a0a,#2a1f05);">A</div>
+      <div class="gallery-item span-2" style="background:linear-gradient(135deg,#0a1a12,#0f2218);">S</div>
+      <div class="gallery-item" style="background:linear-gradient(160deg,#1a150a,#261d08);">P</div>
+      <div class="gallery-item span-2" style="background:linear-gradient(135deg,#151a0a,#1e2410);">V</div>
+    </div>
+    <div style="text-align:center;margin-top:2rem;" class="fade-in">
+      <p style="font-family:var(--font-ui);font-size:0.8rem;color:var(--text-muted);margin-bottom:1rem;">Upload your photos from a Witness dining experience below in the Reviews section.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section testimonials-section" id="testimonials">
+  <div class="container">
+    <div class="section-header center fade-in">
+      <span class="label">What Guests Say</span>
+      <h2>Testimonials</h2>
+      <p>Real experiences from guests who have sat at the Witness table.</p>
+    </div>
+    <div class="testimonials-grid" id="testimonialsGrid"></div>
+
+    <!-- REVIEW UPLOAD -->
+    <div class="review-upload-section fade-in" style="margin-top:4rem;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;">
+        <div>
+          <h3 style="font-size:1.3rem;margin-bottom:0.8rem;color:var(--text-primary);">Share Your Experience</h3>
+          <p style="margin-bottom:2rem;">Dined at a Witness event or had a private chef experience? Leave a review and upload your photos.</p>
+          <form id="reviewForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Your Name</label>
+                <input type="text" name="reviewName" class="form-control" placeholder="Name" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Event / Occasion</label>
+                <input type="text" name="reviewEvent" class="form-control" placeholder="e.g. Birthday Dinner">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Your Rating</label>
+              <div class="star-rating" id="starRating">
+                <input type="radio" name="rating" id="s5" value="5"><label for="s5" title="5 stars"></label>
+                <input type="radio" name="rating" id="s4" value="4"><label for="s4" title="4 stars"></label>
+                <input type="radio" name="rating" id="s3" value="3"><label for="s3" title="3 stars"></label>
+                <input type="radio" name="rating" id="s2" value="2"><label for="s2" title="2 stars"></label>
+                <input type="radio" name="rating" id="s1" value="1"><label for="s1" title="1 star"></label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Your Review</label>
+              <textarea name="reviewText" class="form-control" placeholder="Describe your experience..." required style="min-height:100px;"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Submit Review
+            </button>
+          </form>
+        </div>
+        <div>
+          <h4 style="font-family:var(--font-ui);font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted);margin-bottom:1rem;">Upload Photos</h4>
+          <div class="upload-area" id="uploadArea">
+            <div class="upload-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            </div>
+            <div class="upload-text">
+              <strong>Click to upload</strong> or drag and drop your photos
+            </div>
+            <div style="font-family:var(--font-ui);font-size:0.68rem;color:var(--text-muted);margin-top:0.4rem;">JPG, PNG, WEBP — up to 10MB each</div>
+            <input type="file" id="photoInput" multiple accept="image/*" style="display:none;">
+          </div>
+          <div id="photoPreview" style="display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:1rem;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact-section" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="fade-in">
+        <span class="label">Get in Touch</span>
+        <h2>Contact Witness</h2>
+        <p>For bookings, inquiries, custom menus, catering quotes, and press — reach out through any of the channels below. All inquiries receive a personal response.</p>
+        <div class="contact-methods">
+          <div class="contact-method">
+            <div class="contact-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <div class="contact-label">Email</div>
+              <div class="contact-value">witness@chefwitness.pt</div>
+            </div>
+          </div>
+          <div class="contact-method">
+            <div class="contact-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 5.49 5.49l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/></svg>
+            </div>
+            <div>
+              <div class="contact-label">WhatsApp / Phone</div>
+              <div class="contact-value">+351 912 000 000</div>
+            </div>
+          </div>
+          <div class="contact-method">
+            <div class="contact-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="10" r="3"/><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+            </div>
+            <div>
+              <div class="contact-label">Based In</div>
+              <div class="contact-value">Lisbon, Portugal (serving all of PT)</div>
+            </div>
+          </div>
+          <div class="contact-method">
+            <div class="contact-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </div>
+            <div>
+              <div class="contact-label">Instagram</div>
+              <div class="contact-value">@witnessthefood</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="fade-in fade-in-delay-1">
+        <div class="booking-form-card">
+          <div style="display:flex;align-items:center;gap:0.8rem;margin-bottom:2rem;">
+            <img src="images/logo-icon.png" alt="Witness" style="width:36px;height:36px;object-fit:contain;border-radius:7px;flex-shrink:0;">
+            <h3 style="font-size:1.3rem;color:var(--text-primary);margin:0;">Send a Message</h3>
+          </div>
+          <form onsubmit="submitContact(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Name</label>
+                <input type="text" class="form-control" placeholder="Your name" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" placeholder="your@email.com" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Subject</label>
+              <select class="form-control" required>
+                <option value="" disabled selected>Select subject</option>
+                <option>Booking Inquiry</option>
+                <option>Catering Quote</option>
+                <option>Custom Menu Request</option>
+                <option>Pop-Up Event Collaboration</option>
+                <option>Media / Press</option>
+                <option>General Inquiry</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Message</label>
+              <textarea class="form-control" placeholder="Tell Witness what you have in mind..." style="min-height:140px;" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div style="display:flex;align-items:center;gap:0.8rem;margin-bottom:0.3rem;">
+          <img src="images/logo-icon.png" alt="Witness Culinary" style="width:44px;height:44px;object-fit:contain;border-radius:8px;">
+          <div>
+            <h3 style="margin:0;line-height:1;">WITNESS</h3>
+            <span class="label" style="display:block;margin-top:0.1rem;">Culinary</span>
+          </div>
+        </div>
+        <p>Rooted in Southern American soul, West African tradition, Asian precision, and plant-forward mastery. Serving Portugal with culinary experiences that remember where they came from.</p>
+        <div class="social-links" style="margin-top:1.5rem;">
+          <a href="#" class="social-link" title="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" class="social-link" title="Facebook">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" class="social-link" title="WhatsApp">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          </a>
+          <a href="#" class="social-link" title="TikTok">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul class="footer-links">
+          <li><a href="#booking">Private Chef</a></li>
+          <li><a href="#booking">Full Catering</a></li>
+          <li><a href="#booking">Pop-Up Dining</a></li>
+          <li><a href="#delivery">Meal Delivery</a></li>
+          <li><a href="#booking">Weekly Meal Prep</a></li>
+          <li><a href="#occasions">Special Occasions</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Cuisine</h4>
+        <ul class="footer-links">
+          <li><a href="#menu">Southern American</a></li>
+          <li><a href="#menu">Nigerian</a></li>
+          <li><a href="#menu">Vegan & Plant-Based</a></li>
+          <li><a href="#menu">Pescatarian</a></li>
+          <li><a href="#menu">Asian Fusion</a></li>
+          <li><a href="#menu">Custom Menus</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#about">About Witness</a></li>
+          <li><a href="#calendar">Event Calendar</a></li>
+          <li><a href="#popups">Upcoming Pop-Ups</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 Witness Personal Chef & Catering. All rights reserved. Lisbon, Portugal.</div>
+      <div style="display:flex;gap:1.5rem;align-items:center;">
+        <a href="#" style="font-size:0.68rem;color:var(--text-muted);">Privacy Policy</a>
+        <a href="#" style="font-size:0.68rem;color:var(--text-muted);">Terms</a>
+        <a href="#" style="font-size:0.68rem;color:var(--text-muted);">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- CART BUTTON -->
+<button class="cart-badge" id="cartBtn" style="display:none;" title="View Order">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+  <span class="cart-count">0</span>
+</button>
+
+<!-- CART DRAWER -->
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-header">
+    <h3 style="color:var(--text-primary);">Your Order</h3>
+    <button class="cart-close" id="cartClose">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-footer">
+    <div class="cart-total">
+      <span class="cart-total-label">Estimated Total</span>
+      <span class="cart-total-price" id="cartTotal">€0.00</span>
+    </div>
+    <p style="font-family:var(--font-ui);font-size:0.7rem;color:var(--text-muted);margin-bottom:1rem;">Final price confirmed upon booking. Delivery and service fees may apply.</p>
+    <button class="btn btn-primary" style="width:100%;justify-content:center;" id="checkoutBtn">
+      Proceed to Checkout
+    </button>
+  </div>
+</div>
+
+<!-- BOOKING MODAL -->
+<div id="bookingModal">
+  <div class="modal-overlay" onclick="if(event.target===this)closeAllModals()">
+    <div class="modal">
+      <div class="modal-header">
+        <div style="display:flex;align-items:center;gap:0.7rem;">
+          <img src="images/logo-icon.png" alt="Witness" style="width:28px;height:28px;object-fit:contain;border-radius:6px;">
+          <h3 style="font-size:1.1rem;color:var(--text-primary);">Quick Booking</h3>
+        </div>
+        <button class="cart-close" onclick="closeAllModals()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p style="margin-bottom:1.5rem;font-family:var(--font-ui);font-size:0.85rem;color:var(--text-muted);">Reserve your experience. Witness will confirm within 24 hours.</p>
+        <form onsubmit="submitBooking(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Name</label>
+              <input type="text" class="form-control" name="name" required placeholder="Your name">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" name="email" required placeholder="your@email.com">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Occasion</label>
+            <input type="text" class="form-control" name="occasionDetail" id="bookingOccasion" placeholder="Type of occasion">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Date</label>
+              <input type="date" class="form-control" name="date" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Guests</label>
+              <input type="number" class="form-control" name="guests" min="2" placeholder="e.g. 8" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Notes</label>
+            <textarea class="form-control" name="notes" placeholder="Any details or special requests..." style="min-height:80px;"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Submit Request</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CHECKOUT MODAL -->
+<div id="checkoutModal">
+  <div class="modal-overlay" onclick="if(event.target===this)closeAllModals()">
+    <div class="modal">
+      <div class="modal-header">
+        <div style="display:flex;align-items:center;gap:0.7rem;">
+          <img src="images/logo-icon.png" alt="Witness" style="width:28px;height:28px;object-fit:contain;border-radius:6px;">
+          <h3 style="font-size:1.1rem;color:var(--text-primary);">Checkout</h3>
+        </div>
+        <button class="cart-close" onclick="closeAllModals()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="checkoutForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Full Name</label>
+              <input type="text" class="form-control" required placeholder="Your name">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" required placeholder="your@email.com">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Phone / WhatsApp</label>
+            <input type="tel" class="form-control" required placeholder="+351 000 000 000">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Fulfillment Type</label>
+            <select class="form-control" required>
+              <option value="" disabled selected>Select</option>
+              <option>Delivery — Uber Eats</option>
+              <option>Delivery — Glovo</option>
+              <option>Delivery — Bolt Food</option>
+              <option>Delivery — Takeaway.com</option>
+              <option>Pickup — Lisbon (Campo de Ourique)</option>
+              <option>Pickup — Porto (Bolhao)</option>
+              <option>Direct Home Delivery (arrange with chef)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Delivery Address (if applicable)</label>
+            <input type="text" class="form-control" placeholder="Street, city, postal code">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Preferred Date & Time</label>
+            <input type="datetime-local" class="form-control">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Special Instructions</label>
+            <textarea class="form-control" placeholder="Dietary restrictions, access notes, packaging preferences..." style="min-height:80px;"></textarea>
+          </div>
+          <div style="background:rgba(201,168,76,0.06);border:1px solid var(--border-strong);border-radius:var(--radius);padding:1rem;margin-bottom:1.5rem;">
+            <div style="display:flex;justify-content:space-between;font-family:var(--font-ui);font-size:0.82rem;color:var(--text-secondary);">
+              <span>Subtotal</span>
+              <span id="checkoutSubtotal">€0.00</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-family:var(--font-ui);font-size:0.82rem;color:var(--text-muted);margin-top:0.4rem;">
+              <span>Service fee</span>
+              <span>Confirmed at booking</span>
+            </div>
+            <div class="divider"></div>
+            <div style="display:flex;justify-content:space-between;font-family:var(--font-display);font-size:1.2rem;color:var(--gold);">
+              <span>Estimated Total</span>
+              <span id="checkoutTotal">€0.00</span>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;" onclick="updateCheckoutTotals()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            Confirm Order
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+<script>
+function submitContact(e) {
+  e.preventDefault();
+  showToast('Message sent. Witness will respond within 24 hours.', 'success');
+  e.target.reset();
+}
+
+function joinMailingList() {
+  const input = document.getElementById('mailingEmail');
+  if (!input || !input.value) { showToast('Please enter your email.', 'error'); return; }
+  showToast('Added to the list. Watch your inbox for upcoming events.', 'success');
+  input.value = '';
+}
+
+function updateCheckoutTotals() {
+  const total = Cart.total();
+  const sub = document.getElementById('checkoutSubtotal');
+  const tot = document.getElementById('checkoutTotal');
+  if (sub) sub.textContent = `€${total.toFixed(2)}`;
+  if (tot) tot.textContent = `€${total.toFixed(2)}`;
+}
+
+document.getElementById('checkoutModal').querySelector('.modal-overlay').addEventListener('click', updateCheckoutTotals);
+document.getElementById('cartBtn')?.addEventListener('click', () => {
+  setTimeout(updateCheckoutTotals, 100);
+});
+</script>
+</body>
+</html>
