@@ -2,7 +2,7 @@
   "name": "Witness Culinary — Personal Chef & Catering",
   "short_name": "Witness Culinary",
   "description": "Elevated Soul. Global Flavor. Personal chef and catering — Southern, Vegan, Pescatarian, Asian, Nigerian fusion. Serving Portugal.",
-  "start_url": "/index.html",
+  "start_url": "/pt/index.html",
   "display": "standalone",
   "background_color": "#061206",
   "theme_color": "#c9a84c",
@@ -19,7 +19,7 @@
   ],
   "categories": ["food", "lifestyle", "shopping"],
   "shortcuts": [
-    { "name": "Book a Chef", "url": "/index.html#booking", "description": "Schedule your personal chef experience" },
-    { "name": "Order Now",   "url": "/index.html#menu",    "description": "Browse the menu and place an order" }
+    { "name": "Book a Chef", "url": "/pt/index.html#booking", "description": "Schedule your personal chef experience" },
+    { "name": "Order Now",   "url": "/pt/index.html#menu",    "description": "Browse the menu and place an order" }
   ]
 }
