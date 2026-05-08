@@ -3,12 +3,12 @@ const STATIC_CACHE = 'witness-static-v2.0';
 const DYNAMIC_CACHE = 'witness-dynamic-v2.0';
 
 const STATIC_ASSETS = [
-  '/index.html',
-  '/css/style.css',
-  '/js/app.js',
-  '/manifest.json',
-  '/images/splash-screen.png',
-  '/images/logo-icon.png'
+  '/pt/index.html',
+  '/pt/css/style.css',
+  '/pt/js/app.js',
+  '/pt/manifest.json',
+  '/pt/images/splash-screen.png',
+  '/pt/images/logo-icon.png'
 ];
 
 self.addEventListener('install', event => {
@@ -36,7 +36,7 @@ self.addEventListener('fetch', event => {
         const clone = response.clone();
         caches.open(DYNAMIC_CACHE).then(cache => cache.put(event.request, clone));
         return response;
-      }).catch(() => caches.match('/index.html'));
+      }).catch(() => caches.match('/pt/index.html'));
     })
   );
 });
@@ -45,10 +45,10 @@ self.addEventListener('push', event => {
   const data = event.data ? event.data.json() : {};
   event.waitUntil(self.registration.showNotification(data.title || 'Witness Culinary', {
     body: data.body || 'Your order update is ready.',
-    icon: '/icons/icon-192.png',
-    badge: '/icons/icon-72.png',
+    icon: '/pt/icons/icon-192.png',
+    badge: '/pt/icons/icon-72.png',
     vibrate: [200, 100, 200],
-    data: { url: data.url || '/' }
+    data: { url: data.url || '/pt/' }
   }));
 });
 
